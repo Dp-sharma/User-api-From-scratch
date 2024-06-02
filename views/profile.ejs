@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swastik Classes</title>
+<!-- <link rel="stylesheet" href="/public/home.css"> -->
+<link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <ul class="nav-item">
+            <li class="item">Home</li>
+            <li class="item">About</li>
+            <li class="item">Contact</li>
+        </ul>
+        <div >
+            <img class="img nav-item below-img" onclick="show_profile()" src="/head-659651_1280.png" alt="profile image">
+        </div>
+    </div>
+    <h1>Welcome to swastik Classes</h1>
+    <div class="profile close">
+        <div  class="card">
+            <img class='close_blue' onclick="close_profile()" src="/close-blue.webp" alt="close img">
+            <img src="/head-659651_1280.png" alt="profile image" class="above-img">
+            <h2> <%= student.name %> </h2>
+            <p>Email: <%= student.email %></p>
+            <a href="http://localhost:3000/logout"><button type="submit">Logout</button></a>
+        </div>
+        
+    </div>
+    <script>
+        let below_img = document.querySelector('.below-img');
+        let profile = document.querySelector('.profile')
+        let close = document.querySelector('.close')
+        function show_profile(){
+            below_img.style.display = 'none';
+            profile.style.display = 'flex';
+        }
+        function close_profile(){
+            profile.style.display = 'none';
+            below_img.style.display = 'block';
+        }
+
+    </script>
+</body>
+</html>
