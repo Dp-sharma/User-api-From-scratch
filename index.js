@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 const cookieParser = require('cookie-parser');
 
-
+require('dotenv').config();
 
 
 require('dotenv').config();
@@ -15,8 +15,8 @@ app.use(express.json());
 
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
-const port = 3000
-mongoose.connect("mongodb://127.0.0.1:27017/Mock_test_api")
+const port = process.env.PORT  ||3000;
+mongoose.connect(process.env.MONGODB_URL)
 console.log('Database connected successfully')
 app.set("view engine", "ejs");
 
